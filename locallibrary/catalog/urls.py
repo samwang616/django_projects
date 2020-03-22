@@ -9,7 +9,9 @@ urlpatterns = [
     path('authors/<int:pk>', views.AuthorDetailView.as_view(), name='author-detail'),
 ]
 
-
+urlpatterns += [
+    path('mybooks/', views.LoanedBooksByUserListView.as_view(), name='my-borrowed'),
+]
 #not on MDN tutorial but on dj4e
 # New lines below to serve static files in debug mode
 import os
@@ -24,3 +26,4 @@ urlpatterns += [
         'document_root': os.path.join(BASE_DIR, 'catalog/static'),
     }),
 ]
+# seemed not essential for static files

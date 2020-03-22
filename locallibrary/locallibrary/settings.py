@@ -55,7 +55,8 @@ ROOT_URLCONF = 'locallibrary.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        #'DIRS': [],(changes made here)
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -119,3 +120,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+## added by me
+LOGIN_REDIRECT_URL = '/'
+#done editing
+
+# added by me use console to display email sent by django
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+# done editing
